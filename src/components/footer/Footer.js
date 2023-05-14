@@ -1,7 +1,7 @@
 function Footer(){
     return (
         <footer>
-            wall-street-career Copyright 2023
+            <p>&copy; wall-street-career 2023</p>
         </footer>
     )
 }
