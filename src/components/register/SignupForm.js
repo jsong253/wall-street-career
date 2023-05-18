@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import './Signup.css'
 export default function SignupForm({setToken}) {
 
 
@@ -85,7 +85,7 @@ display: error ? '' : 'none',
 };
 
 return (
-<div className="form">
+<div className="Signup">
 <div>
 <h1>User Registration</h1>
 </div>
