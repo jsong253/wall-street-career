@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 
 import {BrowserRouter} from 'react-router-dom'
-
+import ErrorBoundary from './components/common/ErrorBoundary'
 // import reportWebVitals from './reportWebVitals';
 
 
@@ -15,10 +15,12 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     {/*  add ErrorBoundary here */}
+    <ErrorBoundary>
     <BrowserRouter>     {/* now all child components can declare routes      */}
       
       <App />
     </BrowserRouter>
+    </ErrorBoundary>
   </React.StrictMode>
 );
 

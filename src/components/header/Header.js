@@ -1,13 +1,14 @@
 import React from "react";
 import {Link, NavLink} from 'react-router-dom'
+import './Header.css'
 
 const activeStyle = {
   color:"purple"
 }
 export default function Header() {
   return (
-    <header>
-      <nav>
+    <header className="">
+      <nav className="navbar">
         <ul>
           <li>
             <Link to="/">
@@ -16,6 +17,10 @@ export default function Header() {
             
           </li>
           <li>
+            <NavLink activeStype={activeStyle} to="/home">Home</NavLink>
+          </li>
+
+          <li>
             <NavLink activeStype={activeStyle} to="/login">Login</NavLink>
           </li>
           <li>
@@ -23,6 +28,9 @@ export default function Header() {
           </li>
           <li>
             <NavLink activeStype={activeStyle} to="/resetPassword">Reset Password</NavLink>
+          </li>
+          <li>
+            <NavLink activeStype={activeStyle} to="/pricing">Pricing</NavLink>
           </li>
           <li>
             <NavLink activeStype={activeStyle} to="/courses">Courses</NavLink>

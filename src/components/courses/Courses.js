@@ -1,46 +1,56 @@
 import React, {useState} from "react";
 import "../../App.css";
-import Footer from '../footer/Footer';
-import Header from "../header/Header";
+import Spinner from '../common/Spinner';
+import PageNotFound from "../notFound/PageNotFound";
+import useFetch from "../customHooks/useFetch";
+import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function Courses() {
-  const [course, setCourse] = useState();
+  const [name, setName] = useState("");
+  const { category } = useParams();
+
+  const { data: courses, loading, error } = useFetch(
+    "courses?category=" + category
+  );
 
   function renderCourse(c) {
     return (
-      <div key={c.id} className="product">
-        <a href="/">
+      <div key={c.id} className="course">
+        <Link to={`/${category}/${c.id}`}>
           <img src={`/images/${c.image}`} alt={c.name} />
           <h3>{c.name}</h3>
-        </a>
+          <p>${c.price}</p>
+        </Link>
       </div>
     );
   }
 
-  return (
+  const filteredCourses = name
+  ? courses.filter((c) => c.title.find((n) => n.name ===name))
+  : courses;
+
+if (error) throw error;
+if (loading) return <Spinner />;
+if (courses.length === 0) return <PageNotFound />;
+
+return (
     <>
-      <div className="content">
-        <Header />
-        <main>
-          <section id="filters">
-            <label htmlFor="course">Filter by Course:</label>{" "}
-            <select 
-                id="course"
-                value={course}
-                onChange={(e) => {
-                    debugger;
-                    setCourse(e.target.value)
-                }}
-            >
-              <option value="">All courses</option>
-              <option value="1">lession1</option>
-              <option value="2">lession2</option>
-              <option value="3">lession3</option>
-            </select>
-          </section>
-        </main>
-      </div>
-      <Footer />
+      <section id="filters">
+        <label htmlFor="size">Filter by Name:</label>{" "}
+        <select
+          id="name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        >
+          <option value="">All lessons</option>
+          <option value="7">lesson 1</option>
+          <option value="8">lesson 2</option>
+          <option value="9">lesson 3</option>
+        </select>
+        {name && <h2>Found {filteredCourses.length} courses</h2>}
+      </section>
+      <section id="courses">{filteredCourses.map(renderCourse)}</section>
     </>
   );
 }

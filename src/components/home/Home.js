@@ -1,14 +1,12 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Header from '../header/Header'
 
-export default Home = () => {
+export default function Home() {
 	return (
 		<>
-            <Header />
             <h1>Home page </h1>
-            <Link to='/about'>Go to Aboutpage</Link>
+            <Link to='/about'>Go to About page</Link>
 		</>
 	)
 };
