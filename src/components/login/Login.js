@@ -1,10 +1,10 @@
+// https://www.digitalocean.com/community/tutorials/how-to-add-login-authentication-to-react-applications
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom'
 
 import './Login.css';
 
 async function LoginUser(credentials) {
-    const navigate = useNavigate();
     const awsLoginUrl = 'http://localhost:8080/login'
     return fetch(awsLoginUrl, {
       method: 'POST',
@@ -36,20 +36,20 @@ export default function Login({setToken}){
             <form onSubmit={handleSubmit}>
                 <label>
                     <p>Email </p>
-                    <input type="text" onChange={e => setEmail(e.target.value)}/>
+                    <input type="email"  name='email' required onChange={e => setEmail(e.target.value)}/>
                 </label>
                 <label>
                     <p>Password</p>
-                    <input type="password" onChange={e => setPassword(e.target.value)}/>
+                    <input type="password" required onChange={e => setPassword(e.target.value)}/>
                 </label>
                 <div>
-                    <button type="submit">Submit</button>
+                    <button disabled = {!email && !password} type="submit">Submit</button>
                 </div>
 
                 <Link to='/resetPassword'>Forget password?</Link>
 
                 <div>
-                    <button type="button" onClick={() => navigate("/createAccount")}>Create an account</button>
+                    <button type="button"  onClick={() => navigate("/createAccount")}>Create an account</button>
                 </div>
             </form>
         </div>
