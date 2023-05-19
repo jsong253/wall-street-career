@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default CreateAccount = () => {
+export default function CreateAccount(){
 	return (
 		<>
             <h1>standard page </h1>

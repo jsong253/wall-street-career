@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
-import { Link} from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+
 import './Login.css';
 
 async function LoginUser(credentials) {
+    const navigate = useNavigate();
     const awsLoginUrl = 'http://localhost:8080/login'
     return fetch(awsLoginUrl, {
       method: 'POST',
@@ -15,6 +17,7 @@ async function LoginUser(credentials) {
 }
 
 export default function Login({setToken}){
+    const navigate = useNavigate();
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
 
@@ -46,7 +49,7 @@ export default function Login({setToken}){
                 <Link to='/resetPassword'>Forget password?</Link>
 
                 <div>
-                    <button type="button">Create an account</button>
+                    <button type="button" onClick={() => navigate("/createAccount")}>Create an account</button>
                 </div>
             </form>
         </div>

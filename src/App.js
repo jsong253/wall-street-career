@@ -6,7 +6,7 @@ import Header from './components/header/Header';
 import Home from './components/home/Home'
 import About from './components/home/About'
 import Courses from './components/courses/Courses';
-import Detail from './components/courses/Detail';
+import Course from './components/courses/Course';
 import Preferences from './components/preferences/Preferences';
 import NotFound from './components/notFound/PageNotFound'
 import Login from './components/login/Login';
@@ -19,6 +19,7 @@ import React, { useState } from 'react';
 import TermOfUse from './components/footer/TermOfUse';
 import PrivateNotice from './components/footer/PrivateNotice';
 import Pricing from './components/common/Pricing';
+import CreateAccount from './components/login/CreateAccount';
 
 
 function App() {
@@ -35,7 +36,7 @@ function App() {
       <Routes>
           <Route exact path="/courses" element={<Courses/>}/>
           <Route path="/course/:category" element={<Courses/>} />
-          <Route path="/:category/:id" element={<Detail />} />
+          <Route path="/:category/:id" element={<Course />} />
 
           <Route exact path="/preferences" element={<Preferences/>}/>
           <Route exact path="/home" element={<Home/>}/>
@@ -46,6 +47,7 @@ function App() {
           <Route exact path="/privateNotice" element={<PrivateNotice/>}/>
           <Route exact path="/termOfUse" element={<TermOfUse/>}/>
           <Route exact path="/pricing" element={<Pricing/>}/>
+          <Route exact path="/createAccount" element={<CreateAccount/>}/>
           <Route path="*" element={<NotFound/>}/>
       </Routes> 
 
