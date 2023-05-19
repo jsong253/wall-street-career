@@ -16,10 +16,18 @@ import SignupForm from './components/register/SignupForm.js'
 
 import React, { useState } from 'react';
 
-import TermOfUse from './components/footer/TermOfUse';
-import PrivateNotice from './components/footer/PrivateNotice';
+
+
 import Pricing from './components/common/Pricing';
 import CreateAccount from './components/login/CreateAccount';
+
+import TermsOfUse from "./components/footer/TermsOfUse";
+import PrivacyNotice from './components/footer/PrivacyNotice';
+
+/* This is required only if the project file is located 
+inside the app. Otherwise you can use the external link of the pdf file*/
+import termsOfUsePDF from "./components/footer/pluralsight-individual-terms-of-use-v-2.pdf";
+import privacyNoticePDF from "./components/footer/Privacy Notice.pdf";
 
 
 function App() {
@@ -44,8 +52,8 @@ function App() {
           <Route exact path="/login" element={<Login/>}/>
           <Route exact path="/signup" element={<SignupForm/>}/>
           <Route exact path="/resetPassword" element={<PasswordReset/>}/>
-          <Route exact path="/privateNotice" element={<PrivateNotice/>}/>
-          <Route exact path="/termOfUse" element={<TermOfUse/>}/>
+          <Route exact path="/termOfUse" element={< TermsOfUse pdf={termsOfUsePDF}/>}/>
+          <Route exact path="/privacyNotice" element={< PrivacyNotice pdf={privacyNoticePDF}/>}/>
           <Route exact path="/pricing" element={<Pricing/>}/>
           <Route exact path="/createAccount" element={<CreateAccount/>}/>
           <Route path="*" element={<NotFound/>}/>

@@ -12,7 +12,7 @@ function Footer(){
                     </li>
 
                     <li>
-                        <Link to="/privateNotice">Private Notice</Link>
+                        <Link to="/privacyNotice">Private Notice</Link>
                     </li>
                 </ul>
             </nav>
