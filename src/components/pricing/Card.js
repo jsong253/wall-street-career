@@ -9,15 +9,17 @@ export default function Card({
     title,
     description,
     buttonText,
+    items,
     navPath
 }){
     const navigate = useNavigate();
 
     return (
         <div className="card-container">
-            <img src={imgSrc} alt={imgAlt} className="card-image"/>
-            <h1 className="card-title">{title}</h1>
-            <p className='card-description'>{description}</p>
+            {imgSrc && imgAlt && (<img src={imgSrc} alt={imgAlt} className="card-image"/>)}     
+            { title && <h1 className="card-title">{title}</h1>}
+            {description && <p className='card-description'>{description}</p>}
+            {items}
             <button onClick={() => navigate(navPath)} className="card-btn">{buttonText}</button>
         </div>
       

@@ -17,6 +17,9 @@ export default function Pricing() {
                 1. 500 question
                 2. 200 classes
                 "
+                items={<ul><li>Water-melon</li>
+                <li>Litchi</li>
+                <li>Kiwi</li></ul>}
                 buttonText="Register with Standard Pricing"
                 navPath="/standardPricing"
             />
