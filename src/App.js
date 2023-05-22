@@ -18,7 +18,10 @@ import React, { useState } from 'react';
 
 
 
-import Pricing from './components/common/Pricing';
+import Pricing from './components/pricing/Pricing';
+import StandardPricing from './components/pricing/StandardPricing';
+import PremiumPricing from './components/pricing/PremiumPricing';
+
 import CreateAccount from './components/login/CreateAccount';
 
 import TermsOfUse from "./components/footer/TermsOfUse";
@@ -28,6 +31,7 @@ import PrivacyNotice from './components/footer/PrivacyNotice';
 inside the app. Otherwise you can use the external link of the pdf file*/
 import termsOfUsePDF from "./components/footer/pluralsight-individual-terms-of-use-v-2.pdf";
 import privacyNoticePDF from "./components/footer/Privacy Notice.pdf";
+
 
 
 function App() {
@@ -55,6 +59,8 @@ function App() {
           <Route exact path="/termOfUse" element={< TermsOfUse pdf={termsOfUsePDF}/>}/>
           <Route exact path="/privacyNotice" element={< PrivacyNotice pdf={privacyNoticePDF}/>}/>
           <Route exact path="/pricing" element={<Pricing/>}/>
+          <Route exact path="/standardPricing" element={<StandardPricing/>}/>
+          <Route exact path="/premiumPricing" element={<PremiumPricing/>}/>
           <Route exact path="/createAccount" element={<CreateAccount/>}/>
           <Route path="*" element={<NotFound/>}/>
       </Routes> 
