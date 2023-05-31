@@ -17,9 +17,14 @@ export default function Pricing() {
                 1. 500 question
                 2. 200 classes
                 "
-                items={<ul><li>Water-melon</li>
-                <li>Litchi</li>
-                <li>Kiwi</li></ul>}
+                items={
+                    <ul>
+                        <li>20 Courses</li>
+                        <li>Format/enhance resume</li>
+                        <li>500 question on equity</li>
+                        <li>200 question on hedge funds</li>
+                    </ul>
+                }
                 buttonText="Register with Standard Pricing"
                 navPath="/standardPricing"
             />
@@ -28,8 +33,16 @@ export default function Pricing() {
                 imgAlt="premium pricing"
                 title="$5000/6 Months"
                 description="Include:
-                1. all the standard parts
-                2. one-on-one classes"
+                all the standard parts
+                plus" 
+                items={
+                    <ul>
+                        <li>one-on-one tutooring</li>
+                        <li>Format/enhance resume</li>
+                        <li>500 question on equity</li>
+                        <li>200 question on hedge funds</li>
+                    </ul>
+                }
                 buttonText="Register with Premium Pricing"
                 navPath="/premiumPricing"
             />

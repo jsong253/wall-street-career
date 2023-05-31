@@ -11,6 +11,7 @@ const activeStyle = ({isActive})=>{
 }
 // https://www.youtube.com/watch?v=UyHHmPvVEfI
 // https://ultimatecourses.com/blog/active-navlink-inline-styles-with-react-router
+
 export default function Header() {
   return (
     <header className="">

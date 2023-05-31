@@ -32,8 +32,10 @@ async function LoginUser({email, password}) {               // destructuring the
     }
 
     try{
-        await axios.request(options)                            // must use await to have the request completed otherwise you get cors missing origin error
+        const result = await axios.request(options)                            // must use await to have the request completed otherwise you get cors missing origin error
         console.log(`success to call aws log in`)
+        console.log(`result: ${JSON.stringify(result, null, 4)}`)
+        
     } catch (e)  {
         console.log(`failed to call aws log in with error: ${e}`)
     }
@@ -44,14 +46,28 @@ export default function Login(){
     const navigate = useNavigate();
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
+    let result;
 
     const handleSubmit = async e => {
         e.preventDefault();
         console.log(`before calling aws end point`)
-        const token = await LoginUser({email, password});           // the same as {email:email, password:password}
+        result = await LoginUser({email, password});           // the same as {email:email, password:password}
         console.log(`after calling aws end point`)
-        console.log(`token: ${JSON.stringify(token, null, 4)}`)
+        console.log(`result: ${JSON.stringify(result, null, 4)}`)
         // setToken(token);
+    }
+
+    if (result && result.length === 0)
+    {
+        return (
+            <>
+                <h3>You are not registered</h3>
+                
+                <div>
+                <button type="button"  onClick={() => navigate("/pricing")}>Create an account</button>
+                </div>
+            </>
+        )
     }
 
     return (

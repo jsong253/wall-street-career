@@ -22,7 +22,7 @@ import Pricing from './components/pricing/Pricing';
 import StandardPricing from './components/pricing/StandardPricing';
 import PremiumPricing from './components/pricing/PremiumPricing';
 
-import CreateAccount from './components/login/CreateAccount';
+// import CreateAccount from './components/login/CreateAccount';
 
 import TermsOfUse from "./components/footer/TermsOfUse";
 import PrivacyNotice from './components/footer/PrivacyNotice';
@@ -61,7 +61,7 @@ function App() {
           <Route exact path="/pricing" element={<Pricing/>}/>
           <Route exact path="/standardPricing" element={<StandardPricing/>}/>
           <Route exact path="/premiumPricing" element={<PremiumPricing/>}/>
-          <Route exact path="/createAccount" element={<CreateAccount/>}/>
+          {/* <Route exact path="/createAccount" element={<CreateAccount/>}/> */}
           <Route path="*" element={<NotFound/>}/>
       </Routes> 
 

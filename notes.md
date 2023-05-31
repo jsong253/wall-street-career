@@ -24,4 +24,7 @@ async function LoginUser({email, password}) {               // destructuring the
     }
 }
 
+# postman test:
+https://aaiiuxs4r8.execute-api.us-east-1.amazonaws.com/prod/registrations?email=songjianzhong16@gmail.com&password=Jianpassword
+
   
