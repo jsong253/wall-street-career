@@ -4,7 +4,8 @@ export default function SignupForm({setToken}) {
 
 
 async function RegisterUser(credentials) {
-    const awsLoginUrl = 'http://localhost:8080/login'
+    const awsLoginUrl = 'https://aaiiuxs4r8.execute-api.us-east-1.amazonaws.com/prod/registrations'
+    console.log(`credentials: ${JSON.stringify(credentials, null, 4)}`)
     return fetch(awsLoginUrl, {
         method: 'POST',
         headers: {
@@ -106,7 +107,15 @@ value={name} type="text" />
 <input onChange={handleEmail} className="input"
 value={email} type="email" />
 
+<label className="label">Confirm Email</label>
+<input onChange={handleEmail} className="input"
+value={email} type="email" />
+
 <label className="label">Password</label>
+<input onChange={handlePassword} className="input"
+value={password} type="password" />
+
+<label className="label">Confirm Password</label>
 <input onChange={handlePassword} className="input"
 value={password} type="password" />
 

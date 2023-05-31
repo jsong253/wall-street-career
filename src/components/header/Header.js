@@ -2,9 +2,15 @@ import React from "react";
 import {Link, NavLink} from 'react-router-dom'
 import './Header.css'
 
-const activeStyle = {
-  color:"purple"
+const activeStyle = ({isActive})=>{
+	return {
+		fontWeight: isActive? 'bold' : 'normal',
+		color:isActive? 'purple' : 'blue',
+    // textDecoration: isActive? 'none' : 'underline',
+	}
 }
+// https://www.youtube.com/watch?v=UyHHmPvVEfI
+// https://ultimatecourses.com/blog/active-navlink-inline-styles-with-react-router
 export default function Header() {
   return (
     <header className="">
@@ -14,26 +20,30 @@ export default function Header() {
             <Link to="/">
               <img alt="toggle theme" src="/images/toggle-button.png" />
             </Link>
-            
-          </li>
-          <li>
-            <NavLink activeStype={activeStyle} to="/home">Home</NavLink>
           </li>
 
           <li>
-            <NavLink activeStype={activeStyle} to="/login">Login</NavLink>
+            <NavLink stype={activeStyle} to="/home">Home</NavLink>
           </li>
+
           <li>
-            <NavLink activeStype={activeStyle} to="/signup">Signup</NavLink>
+            <NavLink stype={activeStyle} to="/login">Login</NavLink>
           </li>
+
           <li>
-            <NavLink activeStype={activeStyle} to="/resetPassword">Reset Password</NavLink>
+            <NavLink stype={activeStyle} to="/signup">Signup</NavLink>
           </li>
+
           <li>
-            <NavLink activeStype={activeStyle} to="/pricing">Pricing</NavLink>
+            <NavLink stype={activeStyle} to="/resetPassword">Reset Password</NavLink>
           </li>
+
           <li>
-            <NavLink activeStype={activeStyle} to="/courses">Courses</NavLink>
+            <NavLink stype={activeStyle} to="/pricing">Pricing</NavLink>
+          </li>
+          
+          <li>
+            <NavLink stype={activeStyle} to="/courses">Courses</NavLink>
           </li>
         </ul>
       </nav>
