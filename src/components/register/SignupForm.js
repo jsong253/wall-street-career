@@ -4,7 +4,7 @@ export default function SignupForm({setToken}) {
 
 
 async function RegisterUser(credentials) {
-    const awsLoginUrl = 'https://aaiiuxs4r8.execute-api.us-east-1.amazonaws.com/prod/registrations'
+    const awsLoginUrl = 'https://gf2dkci442.execute-api.us-east-1.amazonaws.com/prod/create-registrations'
     console.log(`credentials: ${JSON.stringify(credentials, null, 4)}`)
     return fetch(awsLoginUrl, {
         method: 'POST',

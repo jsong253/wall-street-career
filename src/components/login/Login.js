@@ -20,7 +20,7 @@ import axios from 'axios'
 // }
 
 async function LoginUser({email, password}) {               // destructuring the passin object
-    const awsLoginUrl = `https://aaiiuxs4r8.execute-api.us-east-1.amazonaws.com/prod/registrations?email=${email}&password=${password}`
+    const awsLoginUrl = `https://gf2dkci442.execute-api.us-east-1.amazonaws.com/prod/get-registrations?email=${email}&password=${password}`
     //console.log(`credentials: ${JSON.stringify(credentials, null, 4)}`)
     console.log(`email: ${email}`)
     console.log(`password: ${password}`)
@@ -57,7 +57,7 @@ export default function Login(){
         // setToken(token);
     }
 
-    if (result && result.length === 0)
+    if (result && result.filteredRegistrations.length === 0)
     {
         return (
             <>
