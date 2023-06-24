@@ -32,6 +32,8 @@ inside the app. Otherwise you can use the external link of the pdf file*/
 import termsOfUsePDF from "./components/footer/pluralsight-individual-terms-of-use-v-2.pdf";
 import privacyNoticePDF from "./components/footer/Privacy Notice.pdf";
 
+import SendFeedback from "./components/feedback/SendFeedback";
+
 
 
 function App() {
@@ -61,7 +63,7 @@ function App() {
           <Route exact path="/pricing" element={<Pricing/>}/>
           <Route exact path="/standardPricing" element={<StandardPricing/>}/>
           <Route exact path="/premiumPricing" element={<PremiumPricing/>}/>
-          {/* <Route exact path="/createAccount" element={<CreateAccount/>}/> */}
+          <Route exact path="/sendFeedback" element={<SendFeedback/>}/>
           <Route path="*" element={<NotFound/>}/>
       </Routes> 
 

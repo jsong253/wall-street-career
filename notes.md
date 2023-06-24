@@ -27,6 +27,9 @@ async function LoginUser({email, password}) {               // destructuring the
 # postman test:
 https://aaiiuxs4r8.execute-api.us-east-1.amazonaws.com/prod/registrations?email=songjianzhong16@gmail.com&password=Jianpassword
 
+POST: https://xchzj7xdca.execute-api.us-east-1.amazonaws.com/prod/feedbacks
+
+
 # cUrl command to generate okta token
 C:\Users\Yang>curl -X POST -u "0oa130rmd72AXU1zI0h8:SOWxjMxm-0l650KJe5fD41f4kxbvGqsBle74nwjp" -d "grant_type=client_credentials" https://travelers-dev.oktapreview.com/oauth2/aus130rsqrd51M6HQ0h8/v1/token -d "scope=filetracking-write"
 

@@ -46,6 +46,10 @@ export default function Header() {
           <li>
             <NavLink stype={activeStyle} to="/courses">Courses</NavLink>
           </li>
+
+          <li>
+            <NavLink stype={activeStyle} to="/sendFeedback">Feedback</NavLink>
+          </li>
         </ul>
       </nav>
     </header>
